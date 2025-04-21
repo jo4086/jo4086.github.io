@@ -1,0 +1,100 @@
+:root {
+  /*------------------*/
+  /*  black  */
+  /*------------------*/
+  --color-black-1000: rgba(0, 0, 0, 1);
+  --color-black-900: rgba(0, 0, 0, 0.9);
+  --color-black-800: rgba(0, 0, 0, 0.8);
+  --color-black-600: rgba(0, 0, 0, 0.6);
+  --color-black-500: rgba(0, 0, 0, 0.5);
+  --color-black-400: rgba(0, 0, 0, 0.4);
+  --color-black-300: rgba(0, 0, 0, 0.3);
+  --color-black-200: rgba(0, 0, 0, 0.2);
+  --color-black-100: rgba(0, 0, 0, 0.1);
+  /*------------------*/
+  /*  blue  */
+  /*------------------*/
+  --color-blue-1000: rgba(59, 130, 246, 1);
+  --color-blue-900: rgba(59, 130, 246, 0.9);
+  --color-blue-800: rgba(59, 130, 246, 0.8);
+  --color-blue-600: rgba(59, 130, 246, 0.6);
+  --color-blue-500: rgba(59, 130, 246, 0.5);
+  --color-blue-400: rgba(59, 130, 246, 0.4);
+  --color-blue-300: rgba(59, 130, 246, 0.3);
+  --color-blue-200: rgba(59, 130, 246, 0.2);
+  --color-blue-100: rgba(59, 130, 246, 0.1);
+  /*------------------*/
+  /*  red  */
+  /*------------------*/
+  --color-red-1000: rgba(220, 38, 38, 1);
+  --color-red-900: rgba(220, 38, 38, 0.9);
+  --color-red-800: rgba(220, 38, 38, 0.8);
+  --color-red-600: rgba(220, 38, 38, 0.6);
+  --color-red-500: rgba(220, 38, 38, 0.5);
+  --color-red-400: rgba(220, 38, 38, 0.4);
+  --color-red-300: rgba(220, 38, 38, 0.3);
+  --color-red-200: rgba(220, 38, 38, 0.2);
+  --color-red-100: rgba(220, 38, 38, 0.1);
+  /*------------------*/
+  /*  green  */
+  /*------------------*/
+  --color-green-1000: rgba(34, 197, 94, 1);
+  --color-green-900: rgba(34, 197, 94, 0.9);
+  --color-green-800: rgba(34, 197, 94, 0.8);
+  --color-green-600: rgba(34, 197, 94, 0.6);
+  --color-green-500: rgba(34, 197, 94, 0.5);
+  --color-green-400: rgba(34, 197, 94, 0.4);
+  --color-green-300: rgba(34, 197, 94, 0.3);
+  --color-green-200: rgba(34, 197, 94, 0.2);
+  --color-green-100: rgba(34, 197, 94, 0.1);
+  /*------------------*/
+  /*  yellow  */
+  /*------------------*/
+  --color-yellow-1000: rgba(234, 179, 8, 1);
+  --color-yellow-900: rgba(234, 179, 8, 0.9);
+  --color-yellow-800: rgba(234, 179, 8, 0.8);
+  --color-yellow-600: rgba(234, 179, 8, 0.6);
+  --color-yellow-500: rgba(234, 179, 8, 0.5);
+  --color-yellow-400: rgba(234, 179, 8, 0.4);
+  --color-yellow-300: rgba(234, 179, 8, 0.3);
+  --color-yellow-200: rgba(234, 179, 8, 0.2);
+  --color-yellow-100: rgba(234, 179, 8, 0.1);
+  /*------------------*/
+  /*  pink  */
+  /*------------------*/
+  --color-pink-1000: rgba(236, 72, 153, 1);
+  --color-pink-900: rgba(236, 72, 153, 0.9);
+  --color-pink-800: rgba(236, 72, 153, 0.8);
+  --color-pink-600: rgba(236, 72, 153, 0.6);
+  --color-pink-500: rgba(236, 72, 153, 0.5);
+  --color-pink-400: rgba(236, 72, 153, 0.4);
+  --color-pink-300: rgba(236, 72, 153, 0.3);
+  --color-pink-200: rgba(236, 72, 153, 0.2);
+  --color-pink-100: rgba(236, 72, 153, 0.1);
+  /*------------------*/
+  /*  salmon  */
+  /*------------------*/
+  --color-salmon-1000: rgba(250, 128, 114, 1);
+  --color-salmon-900: rgba(250, 128, 114, 0.9);
+  --color-salmon-800: rgba(250, 128, 114, 0.8);
+  --color-salmon-600: rgba(250, 128, 114, 0.6);
+  --color-salmon-500: rgba(250, 128, 114, 0.5);
+  --color-salmon-400: rgba(250, 128, 114, 0.4);
+  --color-salmon-300: rgba(250, 128, 114, 0.3);
+  --color-salmon-200: rgba(250, 128, 114, 0.2);
+  --color-salmon-100: rgba(250, 128, 114, 0.1);
+  /*------------------*/
+  /*  greenYellow  */
+  /*------------------*/
+  --color-greenYellow-1000: rgba(173, 255, 47, 1);
+  --color-greenYellow-900: rgba(173, 255, 47, 0.9);
+  --color-greenYellow-800: rgba(173, 255, 47, 0.8);
+  --color-greenYellow-600: rgba(173, 255, 47, 0.6);
+  --color-greenYellow-500: rgba(173, 255, 47, 0.5);
+  --color-greenYellow-400: rgba(173, 255, 47, 0.4);
+  --color-greenYellow-300: rgba(173, 255, 47, 0.3);
+  --color-greenYellow-200: rgba(173, 255, 47, 0.2);
+  --color-greenYellow-100: rgba(173, 255, 47, 0.1);
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,172 @@
+$font-color-black: hsl(0, 0%, 0%);
+$font-color-white: hsl(0, 0%, 100%);
+
+$font-color-red-100: hsl(0, 100%, 18%);
+$font-color-red-200: hsl(0, 100%, 26%);
+$font-color-red-300: hsl(0, 100%, 34%);
+$font-color-red-400: hsl(0, 100%, 42%);
+$font-color-red-500: hsl(0, 100%, 50%);
+$font-color-red-600: hsl(0, 100%, 58%);
+$font-color-red-700: hsl(0, 100%, 66%);
+$font-color-red-800: hsl(0, 100%, 74%);
+$font-color-red-900: hsl(0, 100%, 82%);
+
+$font-color-blue-100: hsl(240, 100%, 18%);
+$font-color-blue-200: hsl(240, 100%, 26%);
+$font-color-blue-300: hsl(240, 100%, 34%);
+$font-color-blue-400: hsl(240, 100%, 42%);
+$font-color-blue-500: hsl(240, 100%, 50%);
+$font-color-blue-600: hsl(240, 100%, 58%);
+$font-color-blue-700: hsl(240, 100%, 66%);
+$font-color-blue-800: hsl(240, 100%, 74%);
+$font-color-blue-900: hsl(240, 100%, 82%);
+
+$font-color-yellow-100: hsl(60, 100%, 18%);
+$font-color-yellow-200: hsl(60, 100%, 26%);
+$font-color-yellow-300: hsl(60, 100%, 34%);
+$font-color-yellow-400: hsl(60, 100%, 42%);
+$font-color-yellow-500: hsl(60, 100%, 50%);
+$font-color-yellow-600: hsl(60, 100%, 58%);
+$font-color-yellow-700: hsl(60, 100%, 66%);
+$font-color-yellow-800: hsl(60, 100%, 74%);
+$font-color-yellow-900: hsl(60, 100%, 82%);
+
+$font-color-orange-100: hsl(39, 100%, 18%);
+$font-color-orange-200: hsl(39, 100%, 26%);
+$font-color-orange-300: hsl(39, 100%, 34%);
+$font-color-orange-400: hsl(39, 100%, 42%);
+$font-color-orange-500: hsl(39, 100%, 50%);
+$font-color-orange-600: hsl(39, 100%, 58%);
+$font-color-orange-700: hsl(39, 100%, 66%);
+$font-color-orange-800: hsl(39, 100%, 74%);
+$font-color-orange-900: hsl(39, 100%, 82%);
+
+$font-color-green-100: hsl(120, 100%, 0%);
+$font-color-green-200: hsl(120, 100%, 10%);
+$font-color-green-300: hsl(120, 100%, 20%);
+$font-color-green-400: hsl(120, 100%, 30%);
+$font-color-green-500: hsl(120, 100%, 40%);
+$font-color-green-600: hsl(120, 100%, 50%);
+$font-color-green-700: hsl(120, 100%, 60%);
+$font-color-green-800: hsl(120, 100%, 70%);
+$font-color-green-900: hsl(120, 100%, 80%);
+
+$font-color-purple-100: hsl(270, 100%, 36%);
+$font-color-purple-200: hsl(270, 100%, 42%);
+$font-color-purple-300: hsl(270, 100%, 48%);
+$font-color-purple-400: hsl(270, 100%, 54%);
+$font-color-purple-500: hsl(270, 100%, 60%);
+$font-color-purple-600: hsl(270, 100%, 66%);
+$font-color-purple-700: hsl(270, 100%, 72%);
+$font-color-purple-800: hsl(270, 100%, 78%);
+$font-color-purple-900: hsl(270, 100%, 84%);
+
+$font-color-pink-100: hsl(340, 100%, 80%);
+$font-color-pink-200: hsl(340, 100%, 82%);
+$font-color-pink-300: hsl(340, 100%, 84%);
+$font-color-pink-400: hsl(340, 100%, 86%);
+$font-color-pink-500: hsl(340, 100%, 88%);
+$font-color-pink-600: hsl(340, 100%, 90%);
+$font-color-pink-700: hsl(340, 100%, 92%);
+$font-color-pink-800: hsl(340, 100%, 94%);
+$font-color-pink-900: hsl(340, 100%, 96%);
+
+$font-color-teal-100: hsl(180, 100%, 9%);
+$font-color-teal-200: hsl(180, 100%, 18%);
+$font-color-teal-300: hsl(180, 100%, 27%);
+$font-color-teal-400: hsl(180, 100%, 36%);
+$font-color-teal-500: hsl(180, 100%, 45%);
+$font-color-teal-600: hsl(180, 100%, 54%);
+$font-color-teal-700: hsl(180, 100%, 63%);
+$font-color-teal-800: hsl(180, 100%, 72%);
+$font-color-teal-900: hsl(180, 100%, 81%);
+
+$font-color-gray-100: hsl(0, 0%, 18%);
+$font-color-gray-200: hsl(0, 0%, 26%);
+$font-color-gray-300: hsl(0, 0%, 34%);
+$font-color-gray-400: hsl(0, 0%, 42%);
+$font-color-gray-500: hsl(0, 0%, 50%);
+$font-color-gray-600: hsl(0, 0%, 58%);
+$font-color-gray-700: hsl(0, 0%, 66%);
+$font-color-gray-800: hsl(0, 0%, 74%);
+$font-color-gray-900: hsl(0, 0%, 82%);
+
+$font-color-darkgray-100: hsl(0, 0%, 10%);
+$font-color-darkgray-200: hsl(0, 0%, 15%);
+$font-color-darkgray-300: hsl(0, 0%, 20%);
+$font-color-darkgray-400: hsl(0, 0%, 25%);
+$font-color-darkgray-500: hsl(0, 0%, 30%);
+$font-color-darkgray-600: hsl(0, 0%, 35%);
+$font-color-darkgray-700: hsl(0, 0%, 40%);
+$font-color-darkgray-800: hsl(0, 0%, 45%);
+$font-color-darkgray-900: hsl(0, 0%, 50%);
+
+$font-color-lightgray-100: hsl(0, 0%, 50%);
+$font-color-lightgray-200: hsl(0, 0%, 55%);
+$font-color-lightgray-300: hsl(0, 0%, 60%);
+$font-color-lightgray-400: hsl(0, 0%, 65%);
+$font-color-lightgray-500: hsl(0, 0%, 70%);
+$font-color-lightgray-600: hsl(0, 0%, 75%);
+$font-color-lightgray-700: hsl(0, 0%, 80%);
+$font-color-lightgray-800: hsl(0, 0%, 85%);
+$font-color-lightgray-900: hsl(0, 0%, 90%);
+
+$font-color-coral-100: hsl(16, 100%, 41%);
+$font-color-coral-200: hsl(16, 100%, 47%);
+$font-color-coral-300: hsl(16, 100%, 53%);
+$font-color-coral-400: hsl(16, 100%, 59%);
+$font-color-coral-500: hsl(16, 100%, 65%);
+$font-color-coral-600: hsl(16, 100%, 71%);
+$font-color-coral-700: hsl(16, 100%, 77%);
+$font-color-coral-800: hsl(16, 100%, 83%);
+$font-color-coral-900: hsl(16, 100%, 89%);
+
+$font-color-mint-100: hsl(160, 100%, 18%);
+$font-color-mint-200: hsl(160, 100%, 26%);
+$font-color-mint-300: hsl(160, 100%, 34%);
+$font-color-mint-400: hsl(160, 100%, 42%);
+$font-color-mint-500: hsl(160, 100%, 50%);
+$font-color-mint-600: hsl(160, 100%, 58%);
+$font-color-mint-700: hsl(160, 100%, 66%);
+$font-color-mint-800: hsl(160, 100%, 74%);
+$font-color-mint-900: hsl(160, 100%, 82%);
+
+$font-color-cyan-100: hsl(190, 100%, 36%);
+$font-color-cyan-200: hsl(190, 100%, 42%);
+$font-color-cyan-300: hsl(190, 100%, 48%);
+$font-color-cyan-400: hsl(190, 100%, 54%);
+$font-color-cyan-500: hsl(190, 100%, 60%);
+$font-color-cyan-600: hsl(190, 100%, 66%);
+$font-color-cyan-700: hsl(190, 100%, 72%);
+$font-color-cyan-800: hsl(190, 100%, 78%);
+$font-color-cyan-900: hsl(190, 100%, 84%);
+
+$font-color-violet-100: hsl(290, 76%, 56%);
+$font-color-violet-200: hsl(290, 76%, 60%);
+$font-color-violet-300: hsl(290, 76%, 64%);
+$font-color-violet-400: hsl(290, 76%, 68%);
+$font-color-violet-500: hsl(290, 76%, 72%);
+$font-color-violet-600: hsl(290, 76%, 76%);
+$font-color-violet-700: hsl(290, 76%, 80%);
+$font-color-violet-800: hsl(290, 76%, 84%);
+$font-color-violet-900: hsl(290, 76%, 88%);
+
+$font-color-indigo-100: hsl(225, 100%, 9%);
+$font-color-indigo-200: hsl(225, 100%, 18%);
+$font-color-indigo-300: hsl(225, 100%, 27%);
+$font-color-indigo-400: hsl(225, 100%, 36%);
+$font-color-indigo-500: hsl(225, 100%, 45%);
+$font-color-indigo-600: hsl(225, 100%, 54%);
+$font-color-indigo-700: hsl(225, 100%, 63%);
+$font-color-indigo-800: hsl(225, 100%, 72%);
+$font-color-indigo-900: hsl(225, 100%, 81%);
+
+$font-color-amber-100: hsl(45, 100%, 18%);
+$font-color-amber-200: hsl(45, 100%, 26%);
+$font-color-amber-300: hsl(45, 100%, 34%);
+$font-color-amber-400: hsl(45, 100%, 42%);
+$font-color-amber-500: hsl(45, 100%, 50%);
+$font-color-amber-600: hsl(45, 100%, 58%);
+$font-color-amber-700: hsl(45, 100%, 66%);
+$font-color-amber-800: hsl(45, 100%, 74%);
+$font-color-amber-900: hsl(45, 100%, 82%);

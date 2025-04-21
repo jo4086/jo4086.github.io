@@ -1,0 +1,20 @@
+:root {
+  --color-mint-100: hsl(160, 100%, 18%);
+  --color-mint-200: hsl(160, 100%, 26%);
+  --color-mint-300: hsl(160, 100%, 34%);
+  --color-mint-400: hsl(160, 100%, 42%);
+  --color-mint-500: hsl(160, 100%, 50%);
+  --color-mint-600: hsl(160, 100%, 58%);
+  --color-mint-700: hsl(160, 100%, 66%);
+  --color-mint-800: hsl(160, 100%, 74%);
+  --color-mint-900: hsl(160, 100%, 82%);
+  --color-coral-100: hsl(16, 100%, 36%);
+  --color-coral-200: hsl(16, 100%, 42%);
+  --color-coral-300: hsl(16, 100%, 48%);
+  --color-coral-400: hsl(16, 100%, 54%);
+  --color-coral-500: hsl(16, 100%, 60%);
+  --color-coral-600: hsl(16, 100%, 66%);
+  --color-coral-700: hsl(16, 100%, 72%);
+  --color-coral-800: hsl(16, 100%, 78%);
+  --color-coral-900: hsl(16, 100%, 84%);
+}

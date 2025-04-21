@@ -4,14 +4,16 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link rel="stylesheet" href="./style/global.css" />
-        <link rel="stylesheet" href="./style/index.css" />
+        <link rel="stylesheet" href="./styles/main.css" />
+        <link rel="stylesheet" href="./styles/global.css" />
+        <link rel="stylesheet" href="./styles/index.css" />
+        <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
     </head>
     <body>
         <header>
             <nav id="navbar">
                 <div class="nav-style">
-                    <span class="snake">Home > Content</span>
+                    <span class="snake">Home - Content</span>
                     <div class="search">
                         <input class="search-input" />
                         <img src="./assets/search-line.svg" />
@@ -21,14 +23,20 @@
         </header>
         <main id="main">
             <div class="side left-placeholder"></div>
-            <div class="side left" id="leftSidebar">
-                <p>스티키</p>
-                <p>스티키</p>
-                <p>스티키</p>
-                <p>스티키</p>
-                <p>스티키</p>
-                <p>스티키</p>
-                <p>스티키</p>
+            <div class="side left left_style" id="leftSidebar">
+                <ul class="left_sections flex_column">
+                    <li class="profile flex_column">
+                        <div class="circle bg profile_img"></div>
+                        <a href="https://jo4086.github.io/" class="profile_name">jo4086</a>
+                    </li>
+                    <li class="left_content">
+                        <a href="https://jo4086.github.io">
+                            <i class="ri-home-4-fill">&nbspHome</i>
+                        </a>
+                    </li>
+                    <li class="left_content">2</li>
+                    <li class="left_content">3</li>
+                </ul>
             </div>
             <div class="container">
                 <h1>Welcome to the jo4086 blog!!</h1>
