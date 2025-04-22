@@ -194,103 +194,16 @@ main.scrolled {
 
 .profile_img {
     width: 100px;
-    background-image: url(../assets/rice_shower.jpg);
+    background-image: url(../../assets/gear.png);
     position: relative;
 }
 
 .left-placeholder {
     min-width: 400px;
-    color: rgb(180, 180, 180);
-    color: rgb(250, 128, 114);
-    color: rgb(240, 118, 104);
-    color: rgb(230, 108, 94);
-    color: rgb(220, 98, 84);
-    color: rgb(210, 88, 74);
-    color: rgb(200, 78, 64);
-
-    color: rgb(176, 12, 93);
-    color: rgb(186, 22, 103);
-    color: rgb(196, 32, 113);
-    color: rgb(206, 42, 123);
-    color: rgb(216, 52, 133);
-    color: rgb(226, 62, 143);
-    color: rgb(236, 72, 153);
-    color: rgb(246, 82, 163);
-    color: rgb(255, 92, 173);
-
-    color: rgb(255, 192, 203);
-    color: rgb(245, 182, 193);
-    color: rgb(235, 172, 183);
-    color: rgb(225, 162, 173);
-    color: rgb(215, 152, 163);
-    color: rgb(205, 142, 153);
-    color: rgb(195, 132, 143);
-    color: rgb(185, 122, 133);
-    color: rgb(175, 112, 123);
-
-    color: hsl(340, 80%, 85%);
-
-    /* color: hsl(350, 100%, 88%); */
-    color: hsl(350, 100%, 96%);
-    color: hsl(350, 100%, 94%);
-    color: hsl(350, 100%, 92%);
-    color: hsl(350, 100%, 90%);
-
-    color: hsl(350, 100%, 88%);
-
-    color: hsl(350, 100%, 86%);
-    color: hsl(350, 100%, 84%);
-    color: hsl(350, 100%, 82%);
-    color: hsl(350, 100%, 80%);
-
-    color: hsl(0, 100%, 30%);
-    color: hsl(0, 100%, 35%);
-    color: hsl(0, 100%, 40%);
-    color: hsl(0, 100%, 45%);
-    /* 0, 100%, 50%: 디폴트 레드
-    위로: 600 700 800 900
-    디폴트 : 500
-    아래로: 400 300 200 100
-    */
-    color: hsl(0, 100%, 50%);
-    color: hsl(0, 100%, 55%);
-    color: hsl(0, 100%, 60%);
-    color: hsl(0, 100%, 65%);
-    color: hsl(0, 100%, 70%);
-
-    color: hsl(240, 100%, 90%);
-    color: hsl(240, 100%, 80%);
-    color: hsl(240, 100%, 70%);
-    color: hsl(240, 100%, 60%);
-
-    color: hsl(240, 100%, 50%);
-
-    color: hsl(240, 100%, 40%);
-    color: hsl(240, 100%, 30%);
-    color: hsl(240, 100%, 20%);
-    color: hsl(240, 100%, 10%);
-
-    color: hsl(80, 61%, 50%);
-    color: hsl(0, 0%, 0%);
-
-    color: hsl(39, 100%, 50%);
-    color: hsl(6, 93%, 71%);
-
-    color: hsl(195, 53%, 79%);
-
-    color: hsl(0, 0%, 50%) y;
-
-    color: hsl(34, 44%, 69%);
-    color: hsl(180, 100%, 50%);
-    color: hsl(300, 100%, 25%);
-    color: hsl(300, 76%, 72%);
-    color: hsl(150, 100%, 50%);
-    color: green;
-    color: hsl(60, 100%, 50%);
 }
 
 .right {
-    background-color: var(--color-greenYellow-400);
+    background-color: var(--color-mint-700);
     /* width: calc(100% - (1200px + 400px)); */
 }
 

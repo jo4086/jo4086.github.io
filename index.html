@@ -4,10 +4,27 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link rel="stylesheet" href="./styles/main.css" />
-        <link rel="stylesheet" href="./styles/global.css" />
-        <link rel="stylesheet" href="./styles/index.css" />
+        <script type="module" src="./head.script.js"></script>
+        <link rel="stylesheet" href="./src/theme/color.css" />
+        <link rel="stylesheet" href="./src/theme/global.css" />
+        <link rel="stylesheet" href="./src/index.css" />
         <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+        <style>
+            #이벤트테스트 {
+                padding: 20px;
+                width: 300px;
+                background: lightgray;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .이벤트테스트-토글 {
+                background: tomato;
+                color: white;
+                transform: scale(1.1);
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -26,11 +43,11 @@
             <div class="side left left_style" id="leftSidebar">
                 <ul class="left_sections flex_column">
                     <li class="profile flex_column">
-                        <div class="circle bg profile_img"></div>
-                        <a href="https://jo4086.github.io/" class="profile_name">jo4086</a>
+                        <a class="circle bg profile_img link_home"></a>
+                        <a class="profile_name link_home">jo4086</a>
                     </li>
                     <li class="left_content">
-                        <a href="https://jo4086.github.io">
+                        <a class="link_home">
                             <i class="ri-home-4-fill">&nbspHome</i>
                         </a>
                     </li>
@@ -39,6 +56,7 @@
                 </ul>
             </div>
             <div class="container">
+                <div id="이벤트테스트" onclick="toggleEventTest()">클릭해서 클래스 토글</div>
                 <h1>Welcome to the jo4086 blog!!</h1>
                 <h1>Welcome to the jo4086 blog!!</h1>
                 <h1>Welcome to the jo4086 blog!!</h1>
@@ -47,6 +65,9 @@
             </div>
             <div class="side right">right side</div>
         </main>
+
         <script src="./javaScript/index.js"></script>
+        <script type="module" src="./src/script.js"></script>
+        <!-- <script src="./src/script.js" type="module"></script> -->
     </body>
 </html>
