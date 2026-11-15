@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Portfolio and Blog interface preview</title>
+  <desc id="desc">A stylized preview of the portfolio and blog layout</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eaf0f8"/>
+      <stop offset="1" stop-color="#d6e4f5"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#173453"/>
+      <stop offset="1" stop-color="#326891"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#background)"/>
+  <circle cx="1070" cy="80" r="230" fill="#a6c6e8" opacity=".32"/>
+  <circle cx="50" cy="650" r="230" fill="#8dafe0" opacity=".22"/>
+  <rect x="110" y="92" width="980" height="535" rx="20" fill="#fff" stroke="#c7d6e8" stroke-width="2"/>
+  <path d="M110 112c0-11 9-20 20-20h940c11 0 20 9 20 20v48H110z" fill="#f7f9fc"/>
+  <circle cx="147" cy="126" r="7" fill="#d9e2ef"/>
+  <circle cx="171" cy="126" r="7" fill="#d9e2ef"/>
+  <circle cx="195" cy="126" r="7" fill="#d9e2ef"/>
+  <rect x="150" y="191" width="188" height="398" rx="10" fill="#f0f5fa"/>
+  <rect x="174" y="222" width="80" height="15" rx="7" fill="#173453"/>
+  <rect x="174" y="269" width="142" height="22" rx="7" fill="#d5e5f4"/>
+  <rect x="174" y="307" width="102" height="12" rx="6" fill="#bed4e9"/>
+  <rect x="174" y="343" width="116" height="12" rx="6" fill="#bed4e9"/>
+  <rect x="174" y="379" width="92" height="12" rx="6" fill="#bed4e9"/>
+  <rect x="174" y="446" width="104" height="11" rx="5" fill="#9fb8d0"/>
+  <rect x="366" y="202" width="326" height="36" rx="9" fill="#173453"/>
+  <rect x="366" y="258" width="222" height="16" rx="7" fill="#9eb6cd"/>
+  <rect x="366" y="300" width="320" height="247" rx="12" fill="url(#card)"/>
+  <path d="M366 497l80-105 54 55 90-121 96 142v79H366z" fill="#76a4c8" opacity=".8"/>
+  <path d="M366 510l110-63 45 33 89-81 76 86v62H366z" fill="#b8d2e6" opacity=".8"/>
+  <rect x="721" y="202" width="324" height="36" rx="9" fill="#e9f0f7"/>
+  <rect x="721" y="258" width="283" height="13" rx="6" fill="#9eb6cd"/>
+  <rect x="721" y="293" width="324" height="73" rx="10" fill="#f3f7fb" stroke="#d7e2ee"/>
+  <rect x="740" y="311" width="173" height="12" rx="6" fill="#41617d"/>
+  <rect x="740" y="335" width="245" height="9" rx="4" fill="#b8cbdc"/>
+  <rect x="721" y="384" width="324" height="73" rx="10" fill="#f3f7fb" stroke="#d7e2ee"/>
+  <rect x="740" y="402" width="199" height="12" rx="6" fill="#41617d"/>
+  <rect x="740" y="426" width="230" height="9" rx="4" fill="#b8cbdc"/>
+  <rect x="721" y="475" width="324" height="73" rx="10" fill="#f3f7fb" stroke="#d7e2ee"/>
+  <rect x="740" y="493" width="160" height="12" rx="6" fill="#41617d"/>
+  <rect x="740" y="517" width="252" height="9" rx="4" fill="#b8cbdc"/>
+</svg>

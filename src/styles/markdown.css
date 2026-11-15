@@ -1,0 +1,89 @@
+.markdown-body > :first-child {
+  margin-top: 0;
+}
+
+.markdown-body :is(h2, h3) {
+  color: var(--color-ink);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  scroll-margin-top: 24px;
+}
+
+.markdown-body h2 {
+  margin: 53px 0 17px;
+  padding-top: 26px;
+  border-top: 1px solid var(--color-line);
+  font-size: 25px;
+}
+
+.markdown-body h3 {
+  margin: 32px 0 12px;
+  font-size: 19px;
+}
+
+.markdown-body :is(p, ul, ol) {
+  margin-bottom: 22px;
+}
+
+.markdown-body :is(ul, ol) {
+  padding-left: 25px;
+}
+
+.markdown-body ul {
+  list-style: disc;
+}
+
+.markdown-body ol {
+  list-style: decimal;
+}
+
+.markdown-body li {
+  margin: 4px 0;
+}
+
+.markdown-body a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.markdown-body blockquote {
+  margin: 25px 0;
+  padding: 5px 0 5px 19px;
+  border-left: 3px solid var(--color-accent);
+  color: var(--color-muted);
+}
+
+.markdown-body code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #ecf2f7;
+  font-size: 0.9em;
+}
+
+.markdown-body pre {
+  margin: 22px 0;
+  overflow-x: auto;
+  border-radius: 8px;
+  padding: 18px;
+  background: var(--color-ink);
+  color: #f3f8fc;
+}
+
+.markdown-body pre code {
+  padding: 0;
+  background: none;
+  color: inherit;
+}
+
+.markdown-body table {
+  display: block;
+  margin: 22px 0;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.markdown-body :is(th, td) {
+  border: 1px solid var(--color-line);
+  padding: 8px 11px;
+}
