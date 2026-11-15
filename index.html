@@ -1,74 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#333" />
-        <title>Document</title>
-        <script type="module" src="./head.script.js"></script>
-        <link rel="stylesheet" href="./src/theme/color.css" />
-        <link rel="stylesheet" href="./src/theme/global.css" />
-        <link rel="stylesheet" href="./src/index.css" />
-        <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
-        <style>
-            #이벤트테스트 {
-                padding: 20px;
-                width: 300px;
-                background: lightgray;
-                text-align: center;
-                cursor: pointer;
-                transition: all 0.3s ease;
-            }
-
-            .이벤트테스트-토글 {
-                background: tomato;
-                color: white;
-                transform: scale(1.1);
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <nav id="navbar">
-                <div class="nav-style">
-                    <span class="snake">Home - Content</span>
-                    <div class="search">
-                        <input class="search-input" />
-                        <img src="./assets/search-line.svg" />
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <main id="main">
-            <div class="side left-placeholder"></div>
-            <div class="side left left_style" id="leftSidebar">
-                <ul class="left_sections flex_column">
-                    <li class="profile flex_column">
-                        <a class="circle bg profile_img link_home"></a>
-                        <a class="profile_name link_home">jo4086</a>
-                    </li>
-                    <li class="left_content">
-                        <a class="link_home">
-                            <i class="ri-home-4-fill">&nbspHome</i>
-                        </a>
-                    </li>
-                    <li class="left_content">2</li>
-                    <li class="left_content">3</li>
-                </ul>
-            </div>
-            <div class="container">
-                <div id="이벤트테스트" onclick="toggleEventTest()">클릭해서 클래스 토글</div>
-                <h1>Welcome to the jo4086 blog!!</h1>
-                <h1>Welcome to the jo4086 blog!!</h1>
-                <h1>Welcome to the jo4086 blog!!</h1>
-                <h1>Welcome to the jo4086 blog!!</h1>
-                <h1>Welcome to the jo4086 blog!!</h1>
-            </div>
-            <div class="side right">right side</div>
-        </main>
-
-        <script src="./javaScript/index.js"></script>
-        <script type="module" src="./src/script.js"></script>
-        <!-- <script src="./src/script.js" type="module"></script> -->
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="프로젝트의 기술적 선택과 개발, 기술 탐구, 일상을 기록하는 포트폴리오와 개인 블로그"
+    />
+    <title>JO4086 · Portfolio & Blog</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
