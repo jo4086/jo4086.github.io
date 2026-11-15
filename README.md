@@ -2,7 +2,7 @@
 
 GitHub Pages에서 운영할 개인 포트폴리오 및 블로그 프로젝트입니다. 프로젝트의 기술적 과정과 개발·기술 탐구·일상 기록을 한 정적 사이트에서 보여줍니다. React, TypeScript, Vite를 사용하며 별도 백엔드나 데이터베이스는 없습니다.
 
-Home, Projects, Blog, About 화면과 Markdown 게시글 탐색이 구현되어 있습니다. 초기 게시글은 사이트 구축 과정과 기록 공간을 소개합니다. GitHub Pages 배포 자동화는 아직 구현되지 않았습니다.
+Home, Projects, Blog, About 화면과 Markdown 게시글 탐색이 구현되어 있습니다. 초기 게시글은 사이트 구축 과정과 기록 공간을 소개합니다. `main`에 푸시하면 [GitHub Actions 워크플로](./.github/workflows/deploy.yml)가 빌드 결과를 GitHub Pages에 배포합니다.
 
 ## 개발 명령
 
