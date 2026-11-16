@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Codex Workspace 흐름 미리보기</title>
+  <desc id="desc">작업 요청에서 관련 Skill을 선택하고 커밋 형식은 Hook으로 검사하는 구조</desc>
+  <rect width="960" height="540" fill="#eff3f9"/>
+  <circle cx="850" cy="85" r="160" fill="#dce7f3"/>
+  <path d="M0 460c170-90 300-110 440-30s300 35 520-100v210H0Z" fill="#e1eaf4"/>
+  <text x="70" y="115" fill="#356f9c" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="3">CODEX WORKSPACE</text>
+  <text x="70" y="160" fill="#182a40" font-family="Arial,sans-serif" font-size="36" font-weight="700">필요한 지침을 찾고, 규칙을 검사</text>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <rect x="70" y="245" width="230" height="150" rx="18" fill="#fff" stroke="#bfd0e2"/>
+    <rect x="365" y="245" width="230" height="150" rx="18" fill="#fff" stroke="#bfd0e2"/>
+    <rect x="660" y="245" width="230" height="150" rx="18" fill="#fff" stroke="#bfd0e2"/>
+    <text x="185" y="315" fill="#182a40" font-size="26" font-weight="700">작업 요청</text>
+    <text x="480" y="315" fill="#182a40" font-size="26" font-weight="700">Skill 선택</text>
+    <text x="775" y="315" fill="#182a40" font-size="26" font-weight="700">지침 적용</text>
+    <text x="185" y="353" fill="#63758a" font-size="17">무엇을 할지</text>
+    <text x="480" y="353" fill="#63758a" font-size="17">관련 설명만</text>
+    <text x="775" y="353" fill="#63758a" font-size="17">작업에 반영</text>
+  </g>
+  <g fill="none" stroke="#658bb1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M315 320h34m-12-12 12 12-12 12"/>
+    <path d="M610 320h34m-12-12 12 12-12 12"/>
+  </g>
+</svg>

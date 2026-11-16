@@ -56,7 +56,7 @@ export function ProjectsPage() {
               <img
                 className="aspect-video w-full object-cover"
                 src={project.image}
-                alt={`${project.name} 화면 미리보기`}
+                alt={`${project.name} 프로젝트 미리보기`}
               />
             </Link>
             <div className="px-7 pt-6 pb-7">

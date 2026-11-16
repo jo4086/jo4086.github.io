@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 710" role="img" aria-labelledby="title desc">
+  <title id="title">캐릭터 기본 정보의 타입 경계와 별도의 관리 경로</title>
+  <desc id="desc">백엔드 매퍼는 외부 응답 타입 BasicRaw를 내부 계약 CharacterBasic으로 변환한다. 프런트엔드는 내부 계약을 사용한다. Electron은 data-core와 DB를 사용하는 별도 관리 경로다.</desc>
+  <rect width="480" height="710" rx="24" fill="#f5f8fb"/>
+  <text x="28" y="48" font-size="24" font-weight="800" fill="#18314b" font-family="sans-serif">확인된 데이터 경계</text>
+  <text x="28" y="75" font-size="15" fill="#526b82" font-family="sans-serif">캐릭터 기본 정보 한 사례의 코드 관계</text>
+
+  <rect x="24" y="103" width="432" height="76" rx="16" fill="#fff" stroke="#b8ccdc" stroke-width="2"/>
+  <text x="43" y="132" font-size="17" font-weight="800" fill="#18314b" font-family="sans-serif">외부 응답 타입 · api-types</text>
+  <text x="43" y="159" font-size="15" fill="#526b82" font-family="sans-serif">BasicRaw — 외부 필드의 원래 형태</text>
+  <path d="M240 180v35" stroke="#347aa5" stroke-width="3"/>
+  <path d="m232 207 8 9 8-9" fill="none" stroke="#347aa5" stroke-width="3"/>
+
+  <rect x="24" y="219" width="432" height="76" rx="16" fill="#fff" stroke="#b8ccdc" stroke-width="2"/>
+  <text x="43" y="248" font-size="17" font-weight="800" fill="#18314b" font-family="sans-serif">백엔드 매퍼</text>
+  <text x="43" y="275" font-size="15" fill="#526b82" font-family="sans-serif">toCharacterBasic(raw)로 형태 변환</text>
+  <path d="M240 296v35" stroke="#347aa5" stroke-width="3"/>
+  <path d="m232 323 8 9 8-9" fill="none" stroke="#347aa5" stroke-width="3"/>
+
+  <rect x="24" y="335" width="432" height="76" rx="16" fill="#eaf5f1" stroke="#8db6a9" stroke-width="2"/>
+  <text x="43" y="364" font-size="17" font-weight="800" fill="#245b58" font-family="sans-serif">내부 계약 · contracts</text>
+  <text x="43" y="391" font-size="15" fill="#386861" font-family="sans-serif">CharacterBasic — 앱에서 쓰는 형태</text>
+  <path d="M240 412v35" stroke="#347aa5" stroke-width="3"/>
+  <path d="m232 439 8 9 8-9" fill="none" stroke="#347aa5" stroke-width="3"/>
+
+  <rect x="24" y="451" width="432" height="62" rx="16" fill="#fff" stroke="#b8ccdc" stroke-width="2"/>
+  <text x="43" y="480" font-size="17" font-weight="800" fill="#18314b" font-family="sans-serif">프런트엔드</text>
+  <text x="43" y="502" font-size="14" fill="#526b82" font-family="sans-serif">contracts의 타입을 가져와 화면에서 사용</text>
+
+  <path d="M24 550h432" stroke="#a8bac8" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="28" y="580" font-size="17" font-weight="800" fill="#18314b" font-family="sans-serif">별도 경로 · 데이터 관리 도구</text>
+  <rect x="24" y="598" width="432" height="80" rx="16" fill="#fff" stroke="#b8ccdc" stroke-width="2"/>
+  <text x="43" y="627" font-size="17" font-weight="800" fill="#18314b" font-family="sans-serif">Electron</text>
+  <text x="43" y="654" font-size="15" fill="#526b82" font-family="sans-serif">data-core · DB 패키지 사용</text>
+  <text x="28" y="699" font-size="13" fill="#526b82" font-family="sans-serif">위 화살표를 Electron 경로로 연장하지 않습니다</text>
+</svg>

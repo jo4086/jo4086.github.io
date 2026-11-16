@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Menu, X } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Download, Menu, X } from 'lucide-react'
 import { type ReactNode, useRef } from 'react'
 import Markdown from 'react-markdown'
 import { Link, useParams, useSearchParams } from 'react-router'
@@ -184,6 +184,15 @@ export function BlogDetailPage() {
               <span aria-hidden="true">·</span>
               <span>{post.tags.join(' · ')}</span>
             </div>
+            {post.pdfPath && (
+              <a
+                className="mt-6 inline-flex items-center gap-2 rounded-lg border border-line bg-white px-4 py-2.5 text-[13px] font-bold text-accent-deep hover:bg-soft"
+                href={post.pdfPath}
+                download
+              >
+                PDF로 읽기 <Download size={16} aria-hidden="true" />
+              </a>
+            )}
           </header>
           {headings.length > 0 && (
             <details className="mobile-toc mb-9 rounded-lg border border-line bg-white px-4 py-3 min-[1350px]:hidden">
