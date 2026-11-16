@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>jo4086 포트폴리오</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 15mm 17mm;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        color: #182a40;
+        font:
+          12px/1.65 'Noto Sans CJK KR',
+          'Noto Sans KR',
+          sans-serif;
+      }
+      header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        padding-bottom: 13px;
+        border-bottom: 2px solid #173b5e;
+      }
+      h1 {
+        margin: 0;
+        font-size: 30px;
+        letter-spacing: -1.6px;
+      }
+      .sub {
+        margin: 2px 0 0;
+        color: #63758a;
+        font-size: 11px;
+      }
+      .contact {
+        text-align: right;
+      }
+      a {
+        color: #245c83;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .edition {
+        margin: 14px 0 0;
+        color: #8c9aab;
+        font-size: 10px;
+      }
+      section {
+        margin-top: 19px;
+      }
+      h2 {
+        margin: 0 0 8px;
+        border-bottom: 1px solid #b9cbd9;
+        padding-bottom: 3px;
+        color: #173b5e;
+        font-size: 17px;
+      }
+      p {
+        margin: 0 0 6px;
+      }
+      .skills {
+        display: grid;
+        grid-template-columns: 84px 1fr;
+        gap: 3px 14px;
+      }
+      .skills strong {
+        color: #173b5e;
+      }
+      article {
+        margin: 13px 0 18px;
+        page-break-inside: avoid;
+      }
+      h3 {
+        margin: 0 0 4px;
+        font-size: 15px;
+      }
+      .meta {
+        color: #63758a;
+        font-size: 10.5px;
+      }
+      .label {
+        color: #173b5e;
+        font-weight: 700;
+      }
+      .detail {
+        margin-top: 6px;
+        font-weight: 700;
+      }
+      .small {
+        font-size: 10.5px;
+        color: #63758a;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>jo4086</h1>
+        <p class="sub">개발 포트폴리오 · AI와 함께 설계하고 검증하는 개인 프로젝트</p>
+      </div>
+      <div class="contact"><a href="https://github.com/jo4086">github.com/jo4086</a></div>
+    </header>
+    <p class="edition">PORTFOLIO · 2026.11 · 프로젝트 상태는 표기 시점의 문서 기준</p>
+    <section>
+      <h2>About Me</h2>
+      <p>
+        두 개인 프로젝트를 AI와 함께 개발했습니다. Maple Insight에서 데이터와 앱의 경계를 설계하고,
+        긴 개발 과정에서 필요해진 일관된 지침·검사 방식을 Codex Workspace로 발전시켰습니다.
+      </p>
+    </section>
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <strong>언어·UI</strong><span>TypeScript, JavaScript, React</span><strong>앱·서버</strong
+        ><span>Electron, Node.js, Express</span><strong>데이터·도구</strong
+        ><span>PostgreSQL, Prisma, Redis, pnpm workspace, Turborepo, Git Hooks</span>
+      </div>
+    </section>
+    <section>
+      <h2>Projects</h2>
+      <article>
+        <h3>Maple Insight</h3>
+        <p class="meta">게임 데이터 조회와 버전별 관리 · TypeScript 모노레포</p>
+        <p>
+          <span class="label">설계 역할</span> 프런트엔드·백엔드·DB·Electron이 함께 쓰는 타입과 각
+          앱의 책임을 구분했습니다. 패키지 구조, 백엔드와 프런트엔드 구조에 직접 개입하고 예시
+          코드로 방향을 제시했습니다.
+        </p>
+        <p>
+          <span class="label">현재 범위</span> Electron Data Studio의 가져오기·검증·비교에는 완료
+          기록이 있습니다. 편집은 진행 중이며 승인 반영은 후속 계획입니다.
+        </p>
+        <p class="detail">
+          <a href="https://jo4086.github.io/#/projects/maple-insight"
+            >자세히 보기 · jo4086.github.io/#/projects/maple-insight ↗</a
+          >
+        </p>
+      </article>
+      <article>
+        <h3>Codex Workspace</h3>
+        <p class="meta">Maple Insight의 개발 경험에서 출발한 지침·검사 작업 공간</p>
+        <p>
+          <span class="label">만든 이유</span> README와 AGENTS 문서만으로는 역할이 다른 앱의 지침을
+          일관되게 찾기 어려웠습니다. 작업별 Skill 지도와 Git 커밋 형식을 확인하는 Hook으로
+          정리했습니다.
+        </p>
+        <p>
+          <span class="label">현재 범위</span> Skill 선택 절차와 Hook 소스·테스트를 문서화했습니다.
+          실제 사용자 환경의 설치 상태는 별도 확인이 필요합니다.
+        </p>
+        <p class="detail">
+          <a href="https://jo4086.github.io/#/projects/codex-workspace"
+            >자세히 보기 · jo4086.github.io/#/projects/codex-workspace ↗</a
+          >
+        </p>
+      </article>
+    </section>
+    <p class="small">두 프로젝트의 구조·흐름·검증 근거는 각 상세 페이지에서 읽을 수 있습니다.</p>
+  </body>
+</html>

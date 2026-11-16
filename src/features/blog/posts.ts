@@ -9,6 +9,7 @@ export interface Post {
   tags: string[]
   body: string
   relatedProjectSlugs: string[]
+  pdfPath?: string
 }
 
 export interface CategoryNode {
@@ -72,6 +73,7 @@ function parsePost(source: string, raw: string): Post {
     relatedProjectSlugs: metadata.relatedProjects
       ? readStrings(metadata.relatedProjects, 'relatedProjects', source)
       : [],
+    pdfPath: metadata.pdf ? readString(metadata.pdf, 'pdf', source) : undefined,
   }
 }
 

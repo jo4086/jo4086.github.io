@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Maple Insight 데이터 흐름 미리보기</title>
+  <desc id="desc">원본 데이터에서 검증과 버전 비교로 이어지는 세 단계</desc>
+  <rect width="960" height="540" fill="#edf5f3"/>
+  <circle cx="830" cy="90" r="170" fill="#d7e9de"/>
+  <path d="M0 450c160-80 230-100 390-40s290 50 570-120v250H0Z" fill="#dcece6"/>
+  <text x="70" y="115" fill="#245b4c" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="3">MAPLE INSIGHT</text>
+  <text x="70" y="160" fill="#173b35" font-family="Arial,sans-serif" font-size="36" font-weight="700">데이터의 변화가 보이도록</text>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <rect x="70" y="245" width="230" height="150" rx="18" fill="#fff" stroke="#a8c8b8"/>
+    <rect x="365" y="245" width="230" height="150" rx="18" fill="#fff" stroke="#a8c8b8"/>
+    <rect x="660" y="245" width="230" height="150" rx="18" fill="#fff" stroke="#a8c8b8"/>
+    <text x="185" y="315" fill="#173b35" font-size="26" font-weight="700">원본</text>
+    <text x="480" y="315" fill="#173b35" font-size="26" font-weight="700">검증</text>
+    <text x="775" y="315" fill="#173b35" font-size="26" font-weight="700">버전 비교</text>
+    <text x="185" y="353" fill="#607d71" font-size="17">출처를 보존</text>
+    <text x="480" y="353" fill="#607d71" font-size="17">문제를 확인</text>
+    <text x="775" y="353" fill="#607d71" font-size="17">변경을 이해</text>
+  </g>
+  <g fill="none" stroke="#4b8a71" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M315 320h34m-12-12 12 12-12 12"/>
+    <path d="M610 320h34m-12-12 12 12-12 12"/>
+  </g>
+</svg>

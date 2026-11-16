@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 900" role="img" aria-labelledby="title desc">
+  <title id="title">Maple Insight 공유 패키지 구조의 세 단계</title>
+  <desc id="desc">초기에는 types 하나를 공유했다. 이후 UI와 유틸리티 등 코드 종류로 나눴다. 현재는 외부 응답, 내부 계약, 게임 데이터와 저장·계산 책임으로 나눈다. 화살표는 시간에 따른 설계 변경이다.</desc>
+  <rect width="480" height="900" rx="24" fill="#f5f8fb"/>
+  <text x="28" y="48" font-size="24" font-weight="800" fill="#18314b" font-family="sans-serif">공유 기준이 바뀐 과정</text>
+  <text x="28" y="75" font-size="15" fill="#526b82" font-family="sans-serif">화살표는 시간 순서이며 의존 관계가 아닙니다</text>
+
+  <rect x="24" y="105" width="432" height="174" rx="18" fill="#fff" stroke="#b8ccdc" stroke-width="2"/>
+  <rect x="40" y="122" width="72" height="32" rx="9" fill="#dcebf4"/>
+  <text x="54" y="144" font-size="15" font-weight="700" fill="#1c5b7f" font-family="sans-serif">초기</text>
+  <text x="40" y="184" font-size="21" font-weight="800" fill="#18314b" font-family="sans-serif">공통 타입 공유</text>
+  <rect x="40" y="205" width="400" height="39" rx="9" fill="#edf4f8"/>
+  <text x="55" y="231" font-size="17" font-weight="700" fill="#294d66" font-family="sans-serif">packages/types</text>
+  <text x="40" y="265" font-size="15" fill="#526b82" font-family="sans-serif">앱들이 같은 타입을 다시 쓰는 데 집중</text>
+
+  <path d="M240 282v41" stroke="#347aa5" stroke-width="3" stroke-linecap="round"/>
+  <path d="m231 314 9 10 9-10" fill="none" stroke="#347aa5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="151" y="301" width="178" height="28" rx="14" fill="#f5f8fb"/>
+  <text x="168" y="320" font-size="14" font-weight="700" fill="#34718f" font-family="sans-serif">공유 대상 확대</text>
+
+  <rect x="24" y="339" width="432" height="192" rx="18" fill="#fff" stroke="#b8ccdc" stroke-width="2"/>
+  <rect x="40" y="356" width="72" height="32" rx="9" fill="#dcebf4"/>
+  <text x="54" y="378" font-size="15" font-weight="700" fill="#1c5b7f" font-family="sans-serif">중간</text>
+  <text x="40" y="419" font-size="21" font-weight="800" fill="#18314b" font-family="sans-serif">코드 종류별 공유</text>
+  <rect x="40" y="440" width="400" height="56" rx="9" fill="#edf4f8"/>
+  <text x="55" y="463" font-size="16" font-weight="700" fill="#294d66" font-family="sans-serif">types · UI · utils · CSS</text>
+  <text x="55" y="486" font-size="14" fill="#526b82" font-family="sans-serif">당시 패키지의 역할을 읽기 쉽게 요약</text>
+  <text x="40" y="519" font-size="15" fill="#526b82" font-family="sans-serif">재사용은 쉬워졌지만 데이터 뜻은 모호</text>
+
+  <path d="M240 534v43" stroke="#347aa5" stroke-width="3" stroke-linecap="round"/>
+  <path d="m231 568 9 10 9-10" fill="none" stroke="#347aa5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="135" y="552" width="210" height="28" rx="14" fill="#f5f8fb"/>
+  <text x="150" y="571" font-size="14" font-weight="700" fill="#34718f" font-family="sans-serif">출처와 책임 구분</text>
+
+  <rect x="24" y="591" width="432" height="270" rx="18" fill="#fff" stroke="#8db6ca" stroke-width="2"/>
+  <rect x="40" y="608" width="72" height="32" rx="9" fill="#d7eee9"/>
+  <text x="54" y="630" font-size="15" font-weight="700" fill="#236a60" font-family="sans-serif">현재</text>
+  <text x="40" y="671" font-size="21" font-weight="800" fill="#18314b" font-family="sans-serif">도메인과 계약별 책임</text>
+  <rect x="40" y="692" width="400" height="132" rx="9" fill="#eaf5f1"/>
+  <text x="55" y="719" font-size="16" font-weight="700" fill="#245b58" font-family="sans-serif">api-types  ·  외부 응답 형식</text>
+  <text x="55" y="750" font-size="16" font-weight="700" fill="#245b58" font-family="sans-serif">contracts  ·  내부 데이터 약속</text>
+  <text x="55" y="781" font-size="16" font-weight="700" fill="#245b58" font-family="sans-serif">game-data  ·  게임 데이터와 규칙</text>
+  <text x="55" y="812" font-size="15" fill="#386861" font-family="sans-serif">DB · 생성 · 계산도 각자 책임 분리</text>
+  <text x="40" y="847" font-size="15" fill="#526b82" font-family="sans-serif">같은 앱이 쓰더라도 데이터 경계를 명시</text>
+</svg>

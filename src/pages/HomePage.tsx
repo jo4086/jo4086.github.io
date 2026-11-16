@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, BookOpen, Code2 } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, BookOpen, Code2, Download } from 'lucide-react'
 import { Link } from 'react-router'
 
 import { posts } from '../features/blog/posts'
@@ -38,6 +38,13 @@ export function HomePage() {
           >
             블로그 읽기 <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
+          <a
+            className="inline-flex min-h-11 items-center justify-center gap-2.5 rounded-lg border border-line bg-white px-[18px] text-[13px] font-bold text-ink hover:bg-soft"
+            href="/portfolio.pdf"
+            download
+          >
+            포트폴리오 PDF <Download size={17} aria-hidden="true" />
+          </a>
         </div>
       </section>
 
