@@ -13,6 +13,17 @@ for (const project of [
     await expect(page.getByRole('navigation', { name: '주요 메뉴' })).toHaveCount(0)
     await expect(page.getByRole('heading', { name: '어떻게 만들었나요?' })).toBeVisible()
     await expect(page.getByRole('heading', { name: '지금 어디까지 왔나요?' })).toBeVisible()
+    if (project.slug === 'maple-insight') {
+      await expect(
+        page.getByRole('heading', { name: '왜 Electron을 별도 앱으로 만들었나요?' }),
+      ).toBeVisible()
+      await expect(page.getByText('스킬 아이콘 추출·표시')).toBeVisible()
+      const diagram = page.getByRole('img', { name: /웹 관리자는 사이트 운영/ })
+      await expect(diagram).toHaveJSProperty('complete', true)
+      expect(
+        await diagram.evaluate((image) => (image as HTMLImageElement).naturalWidth),
+      ).toBeGreaterThan(0)
+    }
     await expect(page.getByRole('link', { name: '프로젝트 분석 문서' })).toHaveAttribute(
       'href',
       `https://github.com/jo4086/${project.slug === 'maple-insight' ? 'maple-insight' : 'codex-workspace'}/blob/main/docs/portfolio/README.md`,

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 441" role="img" aria-labelledby="title desc">
+  <title id="title">커밋 메시지 형식 검사 경로</title>
+  <desc id="desc">지원되는 직접 git commit 도구 명령을 연결 스크립트가 수정하여 Git Hook 경로를 지정한다. Git은 commit-msg Hook에 메시지 파일을 전달하고, Hook은 첫 줄을 검사해 허용, 거절 또는 경고한다.</desc>
+  <rect width="480" height="441" rx="22" fill="#f4f8fb"/>
+  <text x="24" y="42" fill="#19364e" font-size="21" font-weight="800" font-family="sans-serif">커밋 순간에 형식 확인</text>
+  <rect x="24" y="65" width="432" height="57" rx="12" fill="#fff" stroke="#b9ccda"/>
+  <text x="42" y="99" fill="#19364e" font-size="17" font-weight="700" font-family="sans-serif">직접 git commit 도구 명령</text>
+  <path d="M240 123v20m-7-8 7 9 7-9" fill="none" stroke="#337ea8" stroke-width="3"/>
+  <rect x="24" y="147" width="432" height="63" rx="12" fill="#e8f2f9" stroke="#a9c5d8"/>
+  <text x="42" y="176" fill="#19364e" font-size="17" font-weight="700" font-family="sans-serif">도구 연결 스크립트</text>
+  <text x="42" y="198" fill="#45647b" font-size="13" font-family="sans-serif">지원 명령에 Git Hook 경로 지정</text>
+  <path d="M240 211v20m-7-8 7 9 7-9" fill="none" stroke="#337ea8" stroke-width="3"/>
+  <rect x="24" y="235" width="432" height="63" rx="12" fill="#fff" stroke="#b9ccda"/>
+  <text x="42" y="264" fill="#19364e" font-size="17" font-weight="700" font-family="sans-serif">Git → commit-msg Hook</text>
+  <text x="42" y="286" fill="#45647b" font-size="13" font-family="sans-serif">최종 메시지 파일 경로 전달</text>
+  <path d="M240 299v20m-7-8 7 9 7-9" fill="none" stroke="#337ea8" stroke-width="3"/>
+  <rect x="24" y="323" width="432" height="66" rx="12" fill="#eaf5f1" stroke="#9dbfb3"/>
+  <text x="42" y="352" fill="#275e58" font-size="17" font-weight="700" font-family="sans-serif">제목 첫 줄 검사</text>
+  <text x="42" y="376" fill="#386861" font-size="13" font-family="sans-serif">형식 허용 · 오류 거절 · 길이 경고</text>
+  <text x="24" y="423" fill="#566f82" font-size="13" font-family="sans-serif">소스 테스트 완료 · 실제 설치 환경은 별도 확인</text>
+</svg>

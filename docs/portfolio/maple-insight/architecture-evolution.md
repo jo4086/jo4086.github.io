@@ -157,6 +157,10 @@ Nexon Open API에서 제공하는 원본 데이터 구조와 실제 애플리케
 
 새로운 애플리케이션이 추가되더라도 이미 정의된 타입, 계약, 게임 데이터와 계산 기능을 활용할 수 있는 구조를 지향하고 있다.
 
+Electron Data Studio를 별도 앱으로 둔 데에도 책임 분리의 이유가 있다. 웹 관리자 화면은 이용 추이와 사이트 운영에 집중시키고, 위컴알(WzComparerR2)로 준비한 CSV의 변환·검증·버전 비교처럼 로컬 게임 데이터를 다루는 일은 Electron에 맡기려 했다. 현재 웹 admin import 화면은 미연결 초안이다. Electron의 CSV→JSON 가져오기·검증·raw 버전 비교는 검증 기록이 있지만, DB 도메인 데이터의 승인 반영은 계획 단계다. [Electron 앱 분석](./applications.md), [데이터 흐름](./flows.md).
+
+스킬 아이콘도 같은 로컬 도구의 별도 입력 경로다. AI를 활용해 C#으로 만든 추출기가 WzComparerR2의 WzLib으로 WZ 원본에서 PNG를 생성했고, 특정 전직의 실제 아이콘 추출과 Electron 목록 표시가 검증됐다. 새 직업과 스킬에 빠르게 대응하려는 방향이지만, 전체 직업 자동 추출과 Windows 설치본 연동이 완료됐다는 뜻은 아니다. [추출기 기록](https://github.com/jo4086/maple-insight/blob/main/tools/maple-skill-extractor/README.md), [Electron REQ003](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/REQUIREMENTS/REQ003.md).
+
 ### 유지보수와 안정성
 
 새로운 기능을 추가하는 것뿐 아니라 기존 코드와 설정이 중복되거나 서로 충돌하지 않는지도 중요하게 생각하게 되었다.

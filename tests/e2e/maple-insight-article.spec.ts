@@ -16,7 +16,7 @@ test('프로젝트에서 설계 변화 글을 읽고 PDF를 내려받는다', as
   )
 
   const diagrams = page.locator('.markdown-body img')
-  await expect(diagrams).toHaveCount(2)
+  await expect(diagrams).toHaveCount(3)
   for (const diagram of await diagrams.all()) {
     await expect(diagram).toHaveJSProperty('complete', true)
     expect(

@@ -15,11 +15,20 @@ export function SiteLayout() {
         <div className="mx-auto flex min-h-[76px] w-[calc(100%-36px)] max-w-[1280px] items-center gap-9 sm:w-[calc(100%-64px)] max-[680px]:flex-wrap max-[680px]:justify-between max-[680px]:gap-0 max-[680px]:pt-3">
           <NavLink
             to="/"
-            className="whitespace-nowrap text-xl font-extrabold tracking-[-.06em] text-ink max-[680px]:text-lg"
+            className="inline-flex items-center gap-2 whitespace-nowrap text-xl font-extrabold tracking-[-.06em] text-ink max-[680px]:text-lg"
             aria-label="JO4086 홈"
           >
-            JO<span>4086</span>
-            <span className="text-accent">.</span>
+            <img
+              className="h-7 w-7 shrink-0 max-[680px]:h-6 max-[680px]:w-6"
+              src="/favicon-96x96.png"
+              width="28"
+              height="28"
+              alt=""
+              aria-hidden="true"
+            />
+            <span>
+              JO4086<span className="text-accent">.</span>
+            </span>
           </NavLink>
           <nav
             className="mx-auto flex h-[76px] items-center gap-9 max-[680px]:order-3 max-[680px]:m-0 max-[680px]:h-[42px] max-[680px]:w-full max-[680px]:justify-between max-[680px]:gap-3"

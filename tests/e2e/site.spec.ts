@@ -85,11 +85,11 @@ test('카테고리와 아카이브 탐색이 게시글 데이터와 연결된다
   await category.locator('summary').click()
   await category.getByRole('link', { name: /아키텍처/ }).click()
   await expect(page.getByRole('heading', { name: '개발/아키텍처' })).toBeVisible()
-  await expect(page.getByText('2개의 글')).toBeVisible()
+  await expect(page.getByText('5개의 글')).toBeVisible()
 
   await page.goto('/#/blog?archive=2026-11')
   await expect(page.getByRole('heading', { name: '2026-11' })).toBeVisible()
-  await expect(page.getByText('4개의 글')).toBeVisible()
+  await expect(page.getByText('8개의 글')).toBeVisible()
 
   if (test.info().project.name === 'mobile-chromium') {
     await page.getByRole('button', { name: '블로그 탐색' }).click()

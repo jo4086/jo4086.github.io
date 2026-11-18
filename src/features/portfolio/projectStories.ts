@@ -13,6 +13,15 @@ export interface StoryFact {
   state: '확인된 범위' | '진행 중' | '계획' | '미확인'
 }
 
+export interface DataStudioStory {
+  rationale: string
+  siteAdmin: string
+  electron: string
+  diagramAlt: string
+  diagramSummary: string
+  result: string
+}
+
 export interface ProjectStory {
   slug: string
   title: string
@@ -31,6 +40,7 @@ export interface ProjectStory {
   architecture: StoryNode[]
   architectureNote: string
   sharedLayer?: StoryNode
+  dataStudio?: DataStudioStory
   flowTitle: string
   flowIntro: string
   flow: StoryStep[]
@@ -51,7 +61,7 @@ export const projectStories: Record<string, ProjectStory> = {
     situation:
       '메이플스토리 캐릭터 정보는 외부 API에서 오고, 게임의 원본 데이터는 버전마다 달라집니다. 두 종류의 데이터를 한 번에 다루면 어떤 값이 어디서 왔고 무엇이 바뀌었는지 알기 어려워집니다.',
     decision:
-      '조회 서비스와 데이터 관리 도구를 나누고, 관리 도구에서는 원본을 남긴 채 가져오기·검증·비교를 순서대로 수행하도록 설계했습니다.',
+      '웹 관리자는 사이트 운영에 집중하고, 게임 원본 파일과 버전 차이는 별도 Electron 도구에서 다루도록 책임을 나눴습니다. 도구에서는 원본을 남긴 채 가져오기·검증·비교를 순서대로 수행합니다.',
     audience: '캐릭터를 찾는 사용자와 버전별 게임 데이터를 관리하는 사람',
     ownership:
       'AI를 적극 활용한 개인 프로젝트입니다. 패키지 경계와 백엔드·프런트엔드 구조를 직접 설계하고, 공통 타입을 어디에 둘지 판단했습니다.',
@@ -76,6 +86,20 @@ export const projectStories: Record<string, ProjectStory> = {
       detail:
         '프런트엔드·백엔드·데이터베이스·Electron이 같은 데이터 형식을 이해하도록 연결합니다. 이 약속은 공통 타입·계약 패키지에 두고, 외부 API 형식과 화면에만 필요한 형식은 따로 나눴습니다.',
     },
+    dataStudio: {
+      rationale:
+        '웹 관리자 화면에 원본 파일 변환과 버전 비교까지 넣으면 사이트 운영과 게임 데이터 관리의 책임이 한곳에 섞입니다. 그래서 이용 추이·사이트 운영은 웹 관리자의 역할로 두고, 로컬 파일과 게임 데이터 처리는 Electron Data Studio로 분리했습니다.',
+      siteAdmin:
+        '이용 추이와 사이트 운영을 위한 영역으로 구상했습니다. 현재 프런트엔드의 admin import 화면은 제출 동작이 연결되지 않은 초안입니다.',
+      electron:
+        '준비한 CSV를 버전별 JSON으로 변환하고, 내부 데이터 규칙에 대조하며 이전 버전의 차이를 살펴보는 로컬 도구입니다. 필요한 게임 데이터·DB 패키지를 사용하지만 모든 데이터의 승인 반영은 아직 끝나지 않았습니다.',
+      diagramAlt:
+        '웹 관리자는 사이트 운영을 맡도록 구상했고 Electron은 게임 데이터 관리용이다. WzComparerR2로 준비한 CSV는 Electron에서 JSON으로 변환·검증·비교한 뒤 일부 편집 작업본으로 이어진다. dry-run과 DB 승인 반영은 계획이다. 별도 C# 추출기는 WZ에서 스킬 아이콘 PNG를 만들고 Electron 목록에 연결한다.',
+      diagramSummary:
+        '위쪽은 웹 운영과 로컬 데이터 관리의 책임 구분입니다. 아래 두 줄은 CSV 데이터와 스킬 아이콘의 서로 다른 입력 경로입니다. CSV 경로의 편집 작업본은 진행 중이고, dry-run·승인 뒤 DB 반영은 계획 단계입니다.',
+      result:
+        'C# 추출기는 AI를 활용해 만들었습니다. 2026-11-14 검증에서 전직 112의 스킬 22개에 대해 아이콘 PNG 66개를 생성했고, Electron 스킬 목록에서도 추출한 이미지를 표시했습니다. 모든 새 직업을 자동 순회하거나 이미지 바이트를 DB에 저장하는 기능은 아직 없습니다.',
+    },
     flowTitle: '원본에서 검증된 작업본까지',
     flowIntro:
       '데이터를 곧바로 덮어쓰지 않고 단계마다 확인합니다. 실선에 해당하는 앞의 세 단계는 완료 기록이 있으며, 뒤의 두 단계는 상태가 다릅니다.',
@@ -84,7 +108,11 @@ export const projectStories: Record<string, ProjectStory> = {
       { label: '검증', detail: '형식과 내용의 문제를 작업본에서 확인합니다' },
       { label: '버전 비교', detail: '이전 버전과 달라진 부분을 살펴봅니다' },
       { label: '편집 작업본', detail: '변경을 준비하고 다시 확인합니다', state: '진행 중' },
-      { label: '승인 후 반영', detail: '검토한 변경만 데이터베이스에 적용할 예정입니다', state: '계획' },
+      {
+        label: '승인 후 반영',
+        detail: '검토한 변경만 데이터베이스에 적용할 예정입니다',
+        state: '계획',
+      },
     ],
     flowNote:
       '“가져오기·검증·비교 완료”는 Electron 앱 문서의 단계별 검증 기록을 뜻합니다. 전체 조회 서비스나 자동 반영이 완성됐다는 의미는 아닙니다.',
@@ -95,6 +123,11 @@ export const projectStories: Record<string, ProjectStory> = {
         state: '확인된 범위',
       },
       { label: '편집 작업본', detail: '일부 직업 정보 편집과 재열기 구현', state: '진행 중' },
+      {
+        label: '스킬 아이콘 추출·표시',
+        detail: 'C# 추출기 PNG 생성과 Electron 목록의 로컬 이미지 연결 검증',
+        state: '확인된 범위',
+      },
       { label: '승인 반영·생성 자동화', detail: '후속 Phase로 남아 있음', state: '계획' },
     ],
     sourceTitle: '프로젝트 분석 문서',
