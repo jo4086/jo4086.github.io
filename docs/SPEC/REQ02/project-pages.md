@@ -23,13 +23,14 @@
 
 ## Maple Insight 페이지
 
-| 블록 | 비개발자에게 전달할 말 | 근거 |
-| --- | --- | --- |
-| 프로젝트 소개 | 캐릭터 정보를 찾고, 게임 데이터의 변경을 안전하게 살펴보는 도구 | [프로젝트와 아키텍처](../../portfolio/maple-insight/architecture.md) |
-| 구성요소 지도 | 조회 화면·서버·외부 API와 관리 화면·원본 파일·DB의 책임은 다르다 | [앱별 분석](../../portfolio/maple-insight/applications.md) |
-| 공통 타입의 역할 | 프런트엔드·백엔드·DB·Electron이 서로 같은 데이터 형식을 이해하며, 외부 API·내부 계약·화면 전용 타입은 분리한다 | [패키지 분석](../../portfolio/maple-insight/packages.md) |
-| 조회 흐름 | 닉네임 입력 → 캐릭터 식별 → 외부 정보 조회 → 화면 표시. 현재 화면은 이미지·장비 중심이다 | [핵심 흐름](../../portfolio/maple-insight/flows.md) |
-| 데이터 관리 흐름 | 원본 가져오기 → 검증 → 버전 비교는 완료 기록이 있고, 편집은 진행 중이며 승인 반영은 계획이다 | [구현 상태](../../portfolio/maple-insight/status-and-gaps.md) |
+| 블록                        | 비개발자에게 전달할 말                                                                                                                                                                        | 근거                                                                                                              |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| 프로젝트 소개               | 캐릭터 정보를 찾고, 게임 데이터의 변경을 안전하게 살펴보는 도구                                                                                                                               | [프로젝트와 아키텍처](../../portfolio/maple-insight/architecture.md)                                              |
+| 구성요소 지도               | 조회 화면·서버·외부 API와 관리 화면·원본 파일·DB의 책임은 다르다                                                                                                                              | [앱별 분석](../../portfolio/maple-insight/applications.md)                                                        |
+| 공통 타입의 역할            | 프런트엔드·백엔드·DB·Electron이 서로 같은 데이터 형식을 이해하며, 외부 API·내부 계약·화면 전용 타입은 분리한다                                                                                | [패키지 분석](../../portfolio/maple-insight/packages.md)                                                          |
+| 조회 흐름                   | 닉네임 입력 → 캐릭터 식별 → 외부 정보 조회 → 화면 표시. 현재 화면은 이미지·장비 중심이다                                                                                                      | [핵심 흐름](../../portfolio/maple-insight/flows.md)                                                               |
+| 데이터 관리 흐름            | 원본 가져오기 → 검증 → 버전 비교는 완료 기록이 있고, 편집은 진행 중이며 승인 반영은 계획이다                                                                                                  | [구현 상태](../../portfolio/maple-insight/status-and-gaps.md)                                                     |
+| Electron 분리와 아이콘 경로 | 웹 관리자는 사이트 운영을 맡기려는 구상이고, Electron은 CSV 변환·검증·비교와 별도의 C# 스킬 아이콘 추출·표시를 담당한다. PNG 생성과 로컬 표시의 검증 범위, 전체 자동화의 남은 범위를 구분한다 | [앱별 분석](../../portfolio/maple-insight/applications.md), [데이터 흐름](../../portfolio/maple-insight/flows.md) |
 
 공개 화면·스크린샷은 출처와 촬영 시점을 표시한다. 수집·시뮬레이션·자동 publish를 완성된 사용자 기능으로 묘사하지 않는다.
 
@@ -47,13 +48,13 @@ flowchart LR
 
 ## Codex Workspace 페이지
 
-| 블록 | 비개발자에게 전달할 말 | 근거 |
-| --- | --- | --- |
-| 프로젝트 소개 | 개발 작업에 필요한 지침과 검사를 한곳에서 관리하는 작업 공간 | [개요](../../portfolio/codex-workspace/project-overview.md) |
-| 시작 배경 | Maple Insight에서 앱별 책임과 규칙을 README·AGENTS만으로 찾기 어려워진 경험 | [Maple Insight 구성 가이드](../../portfolio/maple-insight/portfolio-brief.md) |
-| 구성요소 지도 | 작업 요청을 보고 관련 지침을 찾는 Skill, 형식 오류를 검사하는 Hook, 아직 제안 단계인 문서를 나눈다 | [아키텍처](../../portfolio/codex-workspace/system-architecture.md) |
-| 지침 선택 흐름 | 작업 종류 파악 → 관련 Skill 선택 → 필요한 설명만 읽기. 선택은 에이전트가 지침을 따르는 과정이다 | [사례 1](../../portfolio/codex-workspace/engineering-case-studies.md) |
-| 커밋 검사 흐름 | 커밋 명령 → 연결 도구 → Git의 메시지 검사 → 허용·거절·경고. 실제 설치된 환경의 동작과 소스 테스트는 구분한다 | [사례 2와 한계](../../portfolio/codex-workspace/engineering-case-studies.md) |
+| 블록           | 비개발자에게 전달할 말                                                                                       | 근거                                                                          |
+| -------------- | ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| 프로젝트 소개  | 개발 작업에 필요한 지침과 검사를 한곳에서 관리하는 작업 공간                                                 | [개요](../../portfolio/codex-workspace/project-overview.md)                   |
+| 시작 배경      | Maple Insight에서 앱별 책임과 규칙을 README·AGENTS만으로 찾기 어려워진 경험                                  | [Maple Insight 구성 가이드](../../portfolio/maple-insight/portfolio-brief.md) |
+| 구성요소 지도  | 작업 요청을 보고 관련 지침을 찾는 Skill, 형식 오류를 검사하는 Hook, 아직 제안 단계인 문서를 나눈다           | [아키텍처](../../portfolio/codex-workspace/system-architecture.md)            |
+| 지침 선택 흐름 | 작업 종류 파악 → 관련 Skill 선택 → 필요한 설명만 읽기. 선택은 에이전트가 지침을 따르는 과정이다              | [사례 1](../../portfolio/codex-workspace/engineering-case-studies.md)         |
+| 커밋 검사 흐름 | 커밋 명령 → 연결 도구 → Git의 메시지 검사 → 허용·거절·경고. 실제 설치된 환경의 동작과 소스 테스트는 구분한다 | [사례 2와 한계](../../portfolio/codex-workspace/engineering-case-studies.md)  |
 
 두 제어 방식의 차이를 보여줄 첫 도식 초안은 다음과 같다.
 

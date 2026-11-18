@@ -46,7 +46,7 @@ export const projects: Project[] = [
     challenge: '지침이 늘어나면 필요한 규칙을 찾기 어렵고 형식 실수가 생깁니다.',
     solution: '책임별 Skill과 커밋 Hook으로 나눕니다.',
     repository: 'https://github.com/jo4086/codex-workspace',
-    relatedPostSlugs: [],
+    relatedPostSlugs: ['codex-workspace-engineering'],
   },
   {
     slug: 'portfolio-blog',

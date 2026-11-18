@@ -42,6 +42,16 @@ Electron의 Phase 00~03은 앱 검증 기록상 완료다. Phase 04에서는 edi
 
 현재 화면의 Renderer는 [Preload API](https://github.com/jo4086/maple-insight/blob/main/apps/electron/src/preload/index.ts)를 통해 [Main IPC](https://github.com/jo4086/maple-insight/blob/main/apps/electron/src/main/ipc/register.ts)에 요청한다. Main의 import·validation·diff·workbench 서비스가 파일·DB 경계를 처리한다. `@maple/data-admin`에 별도 seed/bundle 스크립트는 있지만, 이것을 Electron의 승인 publish 구현으로 설명하면 안 된다. [data-admin 설명](https://github.com/jo4086/maple-insight/blob/main/packages/database/data-admin/README.md).
 
-## 4. 후속 소비 흐름
+CSV 준비와 Electron 처리는 구분한다. 작성자는 위컴알(WzComparerR2)로 WZ 원본을 분석해 CSV를 준비했고, Electron은 선택한 CSV를 JSON으로 변환·보관한다. 변환 성공 시 DB에는 `importing` 버전 정보가 등록되지만 도메인 데이터의 승인 반영과 `ready` 전환이 자동으로 끝나지는 않는다. [가져오기 검증](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/REVIEW/Phase00-01.md).
+
+## 4. 스킬 이미지 추출: 별도 경로
+
+```text
+WZ 원본 → C#·WzLib 추출기 → 버전/전직/스킬별 PNG → Electron 스킬 목록
+```
+
+AI를 활용해 만든 C# 추출기는 세 종류의 아이콘을 PNG로 저장한다. 2026-11-14 검증에서는 전직 `112`의 스킬 22개에서 PNG 66개를 생성했다. Electron은 로컬 PNG를 화면에 연결하고 선택 직업의 연결 전직 ID를 추출기에 전달한다. 이것은 CSV→JSON 변환이나 DB 승인 반영과 다른 경로이며, 전체 직업 자동 순회·Windows 설치본 실행·PNG의 DB 백업은 남은 범위다. [추출기 README](https://github.com/jo4086/maple-insight/blob/main/tools/maple-skill-extractor/README.md), [Electron REQ003](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/REQUIREMENTS/REQ003.md), [검증 기록](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/REVIEW.md#req003-스킬-이미지-로컬-연결-부분-검증-2026-11-14).
+
+## 5. 후속 소비 흐름
 
 성공 publish된 ready 버전을 기반으로 생성 결과를 검토하고, 그 데이터를 계산·시뮬레이션 및 데이터 의존 화면에 연결한다는 것이 현재 계획이다. `@maple/simulator`에는 스탯·심볼 계산이 존재하지만, 보스 시뮬레이션과 통합 사용자 경험은 구현 완료가 아니다. [루트 로드맵](https://github.com/jo4086/maple-insight/blob/main/ROADMAP.md), [시뮬레이터 코드](https://github.com/jo4086/maple-insight/blob/main/packages/simulator/src/index.ts).

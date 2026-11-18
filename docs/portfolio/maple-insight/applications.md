@@ -1,11 +1,11 @@
 # 앱별 분석
 
-| 앱 | 사용자 또는 운영자에게 주는 가치 | 현재 상태 요약 |
-| --- | --- | --- |
-| `back` | 캐릭터 검색을 위한 서버 계약과 Nexon API 응답 정규화 | 검색 경로·mapper 구현. 계약·오류·캐시 검증 보강 필요 |
-| `frontend` | 닉네임 검색과 캐릭터 장비 탐색 화면 | 이미지·장비 중심 일부 실데이터 표시. 화면의 빈 영역 존재 |
-| `ingestor` | 랭킹 기반 수집 및 캐릭터·계정 그룹 데이터 적재 | 단계별 잡 존재. 기본 실행은 랭킹 전용 |
-| `electron` | 버전별 원본 게임 데이터의 로컬 관리 | Phase 00~03 검증 완료, Phase 04 진행 중 |
+| 앱         | 사용자 또는 운영자에게 주는 가치                     | 현재 상태 요약                                           |
+| ---------- | ---------------------------------------------------- | -------------------------------------------------------- |
+| `back`     | 캐릭터 검색을 위한 서버 계약과 Nexon API 응답 정규화 | 검색 경로·mapper 구현. 계약·오류·캐시 검증 보강 필요     |
+| `frontend` | 닉네임 검색과 캐릭터 장비 탐색 화면                  | 이미지·장비 중심 일부 실데이터 표시. 화면의 빈 영역 존재 |
+| `ingestor` | 랭킹 기반 수집 및 캐릭터·계정 그룹 데이터 적재       | 단계별 잡 존재. 기본 실행은 랭킹 전용                    |
+| `electron` | 버전별 원본 게임 데이터의 로컬 관리                  | Phase 00~03 검증 완료, Phase 04 진행 중                  |
 
 ## Back: 조회 API와 정규화
 
@@ -33,8 +33,14 @@ React Router가 홈·캐릭터·로그인 화면을 구성하고 admin import �
 
 ## Electron: Maple Insight Data Studio
 
+작성자의 설계 의도는 웹 관리자 영역을 이용 추이·사이트 운영에 집중시키고, 로컬 게임 원본의 변환·검증·버전 비교를 Electron 앱에 맡기는 것이다. 웹 관리자 기능은 아직 완성되지 않았고, 프런트엔드의 admin import 화면도 제출 동작이 없는 초안이다. 이 분리는 현재 완성 상태가 아니라 역할 경계에 대한 판단이다.
+
 Electron Main은 창·런타임, IPC 등록, 도메인 서비스로 나뉜다. Preload가 Renderer에 명명된 메서드만 노출하고 Renderer는 화면과 상태를 담당한다. [Main 진입점](https://github.com/jo4086/maple-insight/blob/main/apps/electron/src/main/index.ts), [Preload](https://github.com/jo4086/maple-insight/blob/main/apps/electron/src/preload/index.ts), [IPC 등록](https://github.com/jo4086/maple-insight/blob/main/apps/electron/src/main/ipc/register.ts), [구현 아키텍처](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/ARCHITECTURE.md).
 
+작성자는 위컴알(WzComparerR2)로 WZ 원본을 분석해 CSV를 준비했다. Electron의 가져오기·변환은 이 CSV를 입력으로 삼으며, WZ에서 CSV를 직접 생성하는 기능은 아니다. 변환 JSON과 manifest, 버전 정보의 보관과 검증·비교는 현재 단계의 구현·검증 범위다. 모든 내부 계약 타입과 DB 도메인 데이터로의 승인 반영은 후속 단계다. [Phase 00~01 검증](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/REVIEW/Phase00-01.md), [버전별 diff](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/GOAL/Phase03.md).
+
 Phase 00~03에서 파일 가져오기·변환, 검증 작업본, 버전별 raw 비교의 구현과 종료 검증을 마쳤다. Phase 04의 edit workbench는 변경 집합과 revision을 두고, DB 등록 직업의 metadata 7개 필드 편집과 구 복구 초안의 읽기·선택 복사를 부분 제공한다. 직업·스킬·장비 전체 편집은 완료되지 않았다. [단계 상태](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/GOAL/README.md), [Phase 04 목표](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/GOAL/Phase04.md), [workbench 서비스](https://github.com/jo4086/maple-insight/blob/main/apps/electron/src/main/services/workbench/edit-workbench.ts).
+
+스킬 아이콘은 별도 경로다. 작성자가 AI를 활용해 만든 C# 추출기가 WzComparerR2의 WzLib으로 WZ 아이콘 3종을 버전·전직·스킬 ID별 PNG로 저장한다. 2026-11-14 CLI 검증에서 전직 `112`의 스킬 22개에서 PNG 66개가 생성됐고, Electron 스킬 목록의 로컬 이미지 표시와 직업별 추출 버튼도 부분 검증됐다. 전체 직업 자동 순회, Windows 설치본, PNG의 DB 저장은 남아 있다. [추출기 README](https://github.com/jo4086/maple-insight/blob/main/tools/maple-skill-extractor/README.md), [Electron REQ003](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/REQUIREMENTS/REQ003.md), [검증 기록](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/REVIEW.md#req003-스킬-이미지-로컬-연결-부분-검증-2026-11-14).
 
 **포트폴리오 화면 후보:** 업로드·버전 비교·검증 결과·직업/스킬 조회. 사용자 제공 [스킬 목록 화면](https://github.com/jo4086/maple-insight/blob/main/screenshots/manual/electron/electron-2026-11-14T11-23-27-234Z.png)은 실제 관리 UI 구성을 보여주지만 그 자체가 편집·publish 완료 근거는 아니다. 이미지 산출물은 [스크린샷 규칙](https://github.com/jo4086/maple-insight/blob/main/screenshots/README.md)에 따라 다룬다.

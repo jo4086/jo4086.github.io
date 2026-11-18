@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 422" role="img" aria-labelledby="title desc">
+  <title id="title">작업에 맞는 Skill을 찾는 순서</title>
+  <desc id="desc">작업 요청에서 책임을 분류하고 Skill 지도를 확인한다. 선택된 SKILL.md를 읽은 뒤 관련 참고 문서만 연다. TBD의 제안 문서는 구현된 Skill과 별도로 둔다.</desc>
+  <rect width="480" height="422" rx="22" fill="#f4f8fb"/>
+  <text x="24" y="42" fill="#19364e" font-size="21" font-weight="800" font-family="sans-serif">필요한 지침으로 좁혀 가기</text>
+  <rect x="24" y="65" width="432" height="56" rx="12" fill="#fff" stroke="#b9ccda"/>
+  <text x="42" y="99" fill="#19364e" font-size="17" font-weight="700" font-family="sans-serif">작업 요청 · 무엇을 바꾸는가?</text>
+  <path d="M240 122v20m-7-8 7 9 7-9" fill="none" stroke="#337ea8" stroke-width="3"/>
+  <rect x="24" y="146" width="432" height="62" rx="12" fill="#e8f2f9" stroke="#a9c5d8"/>
+  <text x="42" y="175" fill="#19364e" font-size="17" font-weight="700" font-family="sans-serif">책임 분류 + Skill 지도</text>
+  <text x="42" y="197" fill="#45647b" font-size="13" font-family="sans-serif">관련 지침을 고르고 소유 영역을 확인</text>
+  <path d="M240 209v20m-7-8 7 9 7-9" fill="none" stroke="#337ea8" stroke-width="3"/>
+  <rect x="24" y="233" width="432" height="56" rx="12" fill="#fff" stroke="#b9ccda"/>
+  <text x="42" y="267" fill="#19364e" font-size="17" font-weight="700" font-family="sans-serif">선택된 SKILL.md 읽기</text>
+  <path d="M240 290v20m-7-8 7 9 7-9" fill="none" stroke="#337ea8" stroke-width="3"/>
+  <rect x="24" y="314" width="432" height="56" rx="12" fill="#eaf5f1" stroke="#9dbfb3"/>
+  <text x="42" y="348" fill="#275e58" font-size="17" font-weight="700" font-family="sans-serif">작업에 필요한 참고 문서만 읽기</text>
+  <text x="24" y="402" fill="#566f82" font-size="13" font-family="sans-serif">TBD의 제안 문서는 이 실행 경로와 별도</text>
+</svg>

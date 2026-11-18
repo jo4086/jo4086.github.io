@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router'
 
 import { type ProjectStory, projectStories } from './projectStories'
+import { TechnicalCaseOverview } from './TechnicalCaseOverview'
 
 const sections = [
   { id: 'overview', label: '한눈에 보기' },
@@ -255,6 +256,54 @@ export function ProjectStoryPage({ slug }: { slug: 'maple-insight' | 'codex-work
             <h2 className={sectionTitle}>{story.architectureTitle}</h2>
             <p className={`mt-5 ${bodyText}`}>{story.architectureIntro}</p>
             <ArchitectureMap story={story} />
+            {story.dataStudio && (
+              <div className="mt-10 border-t border-line pt-10">
+                <h3 className="text-[23px] font-extrabold tracking-[-.04em]">
+                  왜 Electron을 별도 앱으로 만들었나요?
+                </h3>
+                <p className={`mt-4 ${bodyText}`}>{story.dataStudio.rationale}</p>
+                <div className="mt-6 grid gap-3 md:grid-cols-2">
+                  <div className="rounded-2xl border border-line bg-white p-5 sm:p-6">
+                    <p className="text-[11px] font-extrabold tracking-[.12em] text-accent">
+                      WEB · 역할 구상
+                    </p>
+                    <h4 className="mt-3 text-base font-extrabold">사이트 관리자</h4>
+                    <p className="mt-2 text-sm leading-7 text-muted">
+                      {story.dataStudio.siteAdmin}
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-[#a9c4d8] bg-[#eaf3f9] p-5 sm:p-6">
+                    <p className="text-[11px] font-extrabold tracking-[.12em] text-accent">
+                      DESKTOP · 구현 중
+                    </p>
+                    <h4 className="mt-3 text-base font-extrabold">Electron Data Studio</h4>
+                    <p className="mt-2 text-sm leading-7 text-muted">{story.dataStudio.electron}</p>
+                  </div>
+                </div>
+                <figure className="mt-8">
+                  <img
+                    className="mx-auto block h-auto w-full max-w-[600px]"
+                    src="/diagrams/maple-insight-data-studio.svg"
+                    alt={story.dataStudio.diagramAlt}
+                    width={480}
+                    height={1090}
+                  />
+                  <figcaption className="mt-4 max-w-[760px] text-sm leading-7 text-muted">
+                    {story.dataStudio.diagramSummary}
+                  </figcaption>
+                </figure>
+                <p className={`mt-5 ${bodyText}`}>{story.dataStudio.result}</p>
+                <a
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-accent-deep hover:underline"
+                  href="https://github.com/jo4086/maple-insight/blob/main/tools/maple-skill-extractor/README.md"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  스킬 이미지 추출기 검증 기록 <ArrowUpRight size={16} aria-hidden="true" />
+                </a>
+              </div>
+            )}
+            {story.slug === 'maple-insight' && <TechnicalCaseOverview />}
           </section>
 
           <section id="flow" className={sectionClass} tabIndex={-1}>
@@ -309,6 +358,14 @@ export function ProjectStoryPage({ slug }: { slug: 'maple-insight' | 'codex-work
                   to="/blog/maple-insight-architecture-evolution"
                 >
                   아키텍처 발전 과정 <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+              )}
+              {story.slug === 'codex-workspace' && (
+                <Link
+                  className="inline-flex items-center gap-2 rounded-lg border border-line bg-white px-4 py-3 text-sm font-bold text-accent-deep hover:bg-soft"
+                  to="/blog/codex-workspace-engineering"
+                >
+                  Skill과 Hook 설계 사례 <ArrowRight size={16} aria-hidden="true" />
                 </Link>
               )}
               <a

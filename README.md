@@ -40,7 +40,10 @@ Home, Projects, Blog, About 화면과 Markdown 게시글 탐색이 구현되어 
 - [포트폴리오 PDF](./public/portfolio.pdf): Maple Insight와 Codex Workspace 요약, 사이트 상세 페이지 링크
 - [REQ02 포트폴리오 제작 계획](./docs/REQUIREMENTS/REQ02.md): PDF와 두 프로젝트 상세 페이지의 요구사항·SPEC·단계별 완료 조건
 - [REQ03 상세 기술 글](./docs/REQUIREMENTS/REQ03.md): Maple Insight 설계 변화 블로그 글과 출력용 PDF의 범위·완료 조건
+- [REQ04 기술 사례 계획](./docs/REQUIREMENTS/REQ04.md): Maple Insight API 타입·DB·Electron 사례의 요구사항과 단계별 작성 계획
 
 ## 현재 작업 순서
 
 [로드맵](./docs/ROADMAP.md)이 Phase 상태의 기준입니다. 기존 포트폴리오 PDF의 인쇄·읽기 순서와 배포 후 링크 검증은 [REQ02-Phase03](./docs/GOAL/REQ02/Phase03.md)에 남아 있습니다. 현재 작업 대상은 [REQ03-Phase01](./docs/GOAL/REQ03/Phase01.md)의 Maple Insight 아키텍처 변화 블로그 글과 프로필용 상세 PDF입니다. 이후 REQ02의 남은 검증을 재개합니다.
+
+[REQ04](./docs/REQUIREMENTS/REQ04.md)는 API 타입·DB·Electron 기술 사례의 다음 콘텐츠 작업으로 계획했으며, 요구사항 검토 후 자료 대조 단계부터 진행합니다. 기존 Phase의 상태는 [로드맵](./docs/ROADMAP.md)을 따릅니다.

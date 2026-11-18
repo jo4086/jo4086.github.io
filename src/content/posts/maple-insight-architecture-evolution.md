@@ -43,8 +43,26 @@ Maple Insight는 메이플스토리 캐릭터 정보와 버전별 게임 데이�
 
 그림의 위쪽은 **외부 응답 타입 → 백엔드 매퍼 → 내부 계약 → 프런트엔드**라는 확인된 코드 사례입니다. 이는 모든 API 응답이나 전체 제품의 실행 흐름을 대표한다는 뜻은 아닙니다. 아래쪽의 Electron은 [`@maple/data-core`와 `@maple/db`를 사용](https://github.com/jo4086/maple-insight/blob/main/apps/electron/package.json)하는 별도 관리 도구로 표시했습니다. 캐릭터 조회와 데이터 관리 경로를 하나의 화살표로 이어 놓지 않은 이유입니다.
 
+## 사이트 운영과 게임 데이터 관리를 왜 나눴나
+
+웹 관리자 화면에 이용 추이와 사이트 운영뿐 아니라 로컬 게임 원본의 변환·검증·버전 비교까지 맡기면 책임이 지나치게 넓어진다고 판단했습니다. 그래서 **웹 관리자는 사이트 운영**, **Electron Data Studio는 게임 데이터 관리**를 맡기는 방향으로 설계했습니다. 이는 제가 정한 책임 구분입니다. 현재 프런트엔드에 있는 [admin import 화면](https://github.com/jo4086/maple-insight/blob/main/apps/frontend/src/pages/admin/ImportNew/index.tsx)은 제출 동작이 연결되지 않은 초안이므로, 웹 관리자 기능이 완성됐다는 뜻은 아닙니다.
+
+데이터 준비 과정에서는 위컴알(WzComparerR2)로 메이플스토리 원본 데이터를 분석해 CSV 파일을 확보했습니다. 이 단계는 작성자의 준비 과정이며 Electron이 WZ 파일을 직접 CSV로 자동 추출한다는 뜻은 아닙니다. Electron에서는 준비한 CSV를 [가져와 JSON으로 변환](https://github.com/jo4086/maple-insight/blob/main/apps/electron/src/main/services/import/data-directory-conversion.ts)하고 원본·변환 결과와 버전 정보를 구분해 보관합니다. 그다음 [검증 작업본](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/GOAL/Phase02.md)에서 내부 데이터 규칙에 대조하고 [버전별 추가·수정·삭제를 비교](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/GOAL/Phase03.md)합니다. Electron은 게임 데이터·DB 패키지를 사용하지만 JSON을 모든 내부 계약 패키지와 DB 본문에 자동 반영하는 단계는 아직 완료되지 않았습니다.
+
+스킬 아이콘은 CSV와 다른 경로로 다룹니다. AI의 도움을 받아 C#·.NET으로 만든 [스킬 이미지 추출기](https://github.com/jo4086/maple-insight/blob/main/tools/maple-skill-extractor/README.md)가 WzComparerR2의 WzLib을 사용해 WZ 원본의 아이콘 3종을 버전·전직·스킬 ID별 PNG로 저장합니다. 2026-11-14 CLI 검증에서 전직 `112`의 스킬 22개에 대해 PNG 66개를 생성했고, [Electron 검증 기록](https://github.com/jo4086/maple-insight/blob/main/apps/electron/docs/REVIEW.md#req003-스킬-이미지-로컬-연결-부분-검증-2026-11-14)에는 실제 앱의 아이콘 표시와 직업별 추출 버튼 실행이 남아 있습니다. 새로운 직업·스킬이 생겼을 때 수동 이미지 등록 부담을 줄이려는 설계지만, 전체 직업 자동 순회·Windows 설치본 실행·이미지의 DB 저장은 아직 후속 범위입니다.
+
+![사이트 운영과 Electron 데이터 관리의 책임 구분. CSV는 JSON 변환·검증·버전 비교로 이어지고 DB 승인 반영은 계획이다. 스킬 아이콘은 별도 C# 추출기로 PNG를 만들어 Electron 목록에 연결한다.](/diagrams/maple-insight-data-studio.svg)
+
+그림에서 **실선은 현재 코드와 검증 기록이 있는 경로**, **점선은 진행 중인 편집과 계획된 DB 승인 반영**을 구분합니다. 웹 관리자 영역은 역할 구상이며, CSV 준비와 아이콘 추출은 서로 다른 입력 경로입니다. 둘을 하나의 자동 파이프라인으로 표현하지 않았습니다.
+
+## 개별 구현 사례 더 읽기
+
+- [외부 API 타입의 네 파일 규칙과 Raw·내부 계약 경계](/#/blog/maple-insight-api-types)
+- [DB 관리 명령과 저장 책임, 네 스키마](/#/blog/maple-insight-database)
+- [Electron Data Studio의 IPC·DB·로컬 파일 경계](/#/blog/maple-insight-electron-data-studio)
+
 ## 무엇을 배웠고, 어디까지 확인했나
 
 처음에는 재사용 가능한 코드를 한곳에 모으는 것이 목표였습니다. 지금은 외부 데이터의 원형, 제품 안에서 합의한 형식, 게임 규칙과 저장 책임을 구분하는 것이 더 중요하다고 생각합니다. 설계는 처음부터 완성되지 않았고, 실제로 앱과 기능이 늘어날 때마다 바꾸어 왔습니다.
 
-위 Git 기록과 코드 경로는 **구조가 바뀌었고 특정 변환·사용 사례가 존재한다는 근거**입니다. 성능 향상률, 코드 재사용률, 모든 앱의 통합 완료를 입증하지는 않습니다. 현재 구현과 진행 중인 범위는 [Maple Insight 프로젝트 상세 페이지](/#/projects/maple-insight)에서 구분해 볼 수 있습니다. 이 프로젝트에서 지침 관리 방식을 바꾸게 된 경험은 [Codex Workspace 프로젝트 상세 페이지](/#/projects/codex-workspace)에 이어집니다.
+위 Git 기록과 코드 경로는 **구조가 바뀌었고 특정 변환·사용 사례가 존재한다는 근거**입니다. 아이콘 생성 수치는 해당 날짜의 추출기 검증 결과이지 모든 새 버전의 자동 처리 성과가 아닙니다. 성능 향상률, 코드 재사용률, 모든 앱의 통합 완료도 입증하지 않습니다. 현재 구현과 진행 중인 범위는 [Maple Insight 프로젝트 상세 페이지](/#/projects/maple-insight)에서 구분해 볼 수 있습니다. 이 프로젝트에서 지침 관리 방식을 바꾸게 된 경험은 [Codex Workspace 프로젝트 상세 페이지](/#/projects/codex-workspace)에 이어집니다.

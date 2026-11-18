@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight, Download, Menu, X } from 'lucide-react'
-import { type ReactNode, useRef } from 'react'
+import { type ReactNode, useRef, useState } from 'react'
 import Markdown from 'react-markdown'
 import { Link, useParams, useSearchParams } from 'react-router'
 import remarkGfm from 'remark-gfm'
@@ -8,6 +8,7 @@ import { NotFoundPage } from '../../pages/NotFoundPage'
 import { getProject } from '../portfolio/projects'
 
 import { BlogSidebar } from './BlogSidebar'
+import { ImageLightbox, type GalleryImage } from './ImageLightbox'
 import { type Heading, getHeadings, getPost, posts } from './posts'
 import { TableOfContents } from './TableOfContents'
 import '../../styles/markdown.css'
@@ -153,10 +154,47 @@ export function BlogListPage() {
   )
 }
 
+function PostImage({
+  src,
+  alt,
+  onOpen,
+  capture,
+}: {
+  src: string
+  alt: string
+  onOpen: () => void
+  capture: boolean
+}) {
+  return (
+    <span className={capture ? 'technical-capture' : 'post-image'}>
+      <button
+        className="post-image-button"
+        type="button"
+        aria-label={`확대 보기: ${alt || '이미지'}`}
+        onClick={onOpen}
+      >
+        <img src={src} alt={alt} loading="lazy" />
+      </button>
+      {capture && (
+        <small>2026년 11월 17일 작성자가 촬영한 자료 · 이미지를 눌러 크게 볼 수 있습니다.</small>
+      )}
+    </span>
+  )
+}
+
 export function BlogDetailPage() {
   const { slug } = useParams()
   const post = getPost(slug)
   if (!post) return <NotFoundPage />
+
+  return <BlogPostDetail key={post.slug} post={post} />
+}
+
+function BlogPostDetail({ post }: { post: NonNullable<ReturnType<typeof getPost>> }) {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+  const imageMatches = [...post.body.matchAll(/!\[([^\]]*)\]\(([^\s)]+)\)/g)]
+  const images: GalleryImage[] = imageMatches.map((match) => ({ src: match[2], alt: match[1] }))
+  const imageIndexByOffset = new Map(imageMatches.map((match, index) => [match.index, index]))
 
   const headings = getHeadings(post.body)
   const headingByLine = new Map<number, Heading>(headings.map((heading) => [heading.line, heading]))
@@ -228,11 +266,31 @@ export function BlogDetailPage() {
                     {children}
                   </a>
                 ),
+                img: ({ node, src, alt }) => {
+                  const index = imageIndexByOffset.get(node?.position?.start.offset ?? -1)
+                  if (!src || index === undefined)
+                    return <img src={src} alt={alt ?? ''} loading="lazy" />
+                  return (
+                    <PostImage
+                      src={src}
+                      alt={alt ?? ''}
+                      capture={src.startsWith('/cases/maple-insight/')}
+                      onOpen={() => setLightboxIndex(index)}
+                    />
+                  )
+                },
               }}
             >
               {post.body}
             </Markdown>
           </div>
+          {lightboxIndex !== null && (
+            <ImageLightbox
+              images={images}
+              initialIndex={lightboxIndex}
+              onClose={() => setLightboxIndex(null)}
+            />
+          )}
           {relatedProjects.length > 0 && (
             <section className="mt-14 border-t border-line pt-7">
               <h2 className="mb-3 text-base font-extrabold">관련 프로젝트</h2>
